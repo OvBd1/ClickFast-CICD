@@ -23,6 +23,19 @@ h1 {
   &:hover {
     scale: 1.1;
   }
+  &:disabled {
+    background-color: lightgray;
+    cursor: not-allowed;
+    scale: 1;
+  }
+}
+
+#button-reset {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  text-decoration: underline;
 }
 
 .flex-center {
@@ -30,6 +43,7 @@ h1 {
   justify-content: center;
   align-items: center;
   text-align: center;
+  gap: 1rem;
 }
 
 .catchphrase {

@@ -12,9 +12,24 @@
   <body>
     <div id="main">
       <div id="container">
-        <h1 class="flex">ClickFast</h1>
+        <h1 class="flex-center">ClickFast</h1>
         <p class="catchphrase">Sois le plus rapide des clickers du game ⚡</p>
+
+        <p class="catchphrase">
+          Temps restant : <span id="timer">5</span> secondes
+        </p>
+
+        <div class="flex-center">
+          <div class="number" id="score">0</div>
+        </div>
+
+        <div class="flex-center">
+          <button id="button-clicker">Click me!</button>
+          <button id="button-reset">Reset</button>
+        </div>
       </div>
     </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
