@@ -14,12 +14,16 @@
   "author": "",
   "main": "script.js",
   "scripts": {
+    "lint": "eslint .",
     "test": "npx jest --env=jsdom"
   },
   "dependencies": {
     "jsdom": "^30.0.1"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.8.0",
+    "globals": "^17.9.0",
     "jest": "^30.4.2",
     "jest-environment-jsdom": "^30.4.1"
   }
