@@ -1,0 +1,25 @@
+{
+  "name": "clickfast",
+  "version": "1.0.0",
+  "description": "Sois le plus rapide des clickers du game ⚡",
+  "homepage": "https://github.com/OvBd1/ClickFast-CICD#readme",
+  "bugs": {
+    "url": "https://github.com/OvBd1/ClickFast-CICD/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OvBd1/ClickFast-CICD.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "npx jest"
+  },
+  "dependencies": {
+    "jsdom": "^30.0.1"
+  },
+  "devDependencies": {
+    "jest": "^30.4.2"
+  }
+}
