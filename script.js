@@ -1,10 +1,10 @@
 const DEFAULT_DURATION = 5;
 
-const clickButton = document.getElementById("button-clicker");
-const resetButton = document.getElementById("button-reset");
-const scoreElement = document.getElementById("score");
-const timerElement = document.getElementById("timer");
-const durationButtons = document.querySelectorAll(".duration-button");
+let clickButton;
+let resetButton;
+let scoreElement;
+let timerElement;
+let durationButtons;
 
 let gameDuration = DEFAULT_DURATION;
 let count = 0;
@@ -64,13 +64,30 @@ function setDuration(newDuration) {
   resetGame();
 }
 
-clickButton.addEventListener("click", handleClick);
-resetButton.addEventListener("click", resetGame);
+// Récupère les éléments et branche les listeners.
+// À n'appeler qu'une fois le DOM chargé, sinon les éléments valent null.
+function initGame() {
+  clickButton = document.getElementById("button-clicker");
+  resetButton = document.getElementById("button-reset");
+  scoreElement = document.getElementById("score");
+  timerElement = document.getElementById("timer");
+  durationButtons = document.querySelectorAll(".duration-button");
 
-durationButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    setDuration(Number(button.dataset.duration));
+  clickButton.addEventListener("click", handleClick);
+  resetButton.addEventListener("click", resetGame);
+
+  durationButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      setDuration(Number(button.dataset.duration));
+    });
   });
-});
 
-setDuration(DEFAULT_DURATION);
+  setDuration(DEFAULT_DURATION);
+}
+
+document.addEventListener("DOMContentLoaded", initGame);
+
+// Dans le navigateur `module` n'existe pas : on n'exporte que côté Node (Jest).
+if (typeof module !== "undefined") {
+  module.exports = { initGame, handleClick, resetGame, setDuration };
+}
